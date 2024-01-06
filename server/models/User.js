@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 
 // import schema from Book.js
 const bookSchema = require('./Book');
@@ -31,7 +31,7 @@ const userSchema = new Schema(
     },
   }
 );
-
+/*
 // hash user password
 userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
@@ -46,7 +46,7 @@ userSchema.pre('save', async function (next) {
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
-
+*/
 // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
 userSchema.virtual('bookCount').get(function () {
   return this.savedBooks.length;
