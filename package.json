@@ -5,27 +5,15 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "render-build": "npm install && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.2.0"
-  },
-  "dependencies": {
-    "@apollo/client": "^3.8.8",
-    "@apollo/server": "^4.9.5",
-    "apollo-server-express": "^3.13.0",
-    "dotenv": "^16.3.1",
-    "esbuild": "^0.18.20",
-    "graphql": "^16.8.1",
-    "mongodb": "^6.3.0",
-    "vite": "^5.0.10"
-  },
-  "engines": {
-    "node": "18.19.0"
+    "concurrently": "^5.1.0"
   }
 }
